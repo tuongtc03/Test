@@ -66,6 +66,7 @@ button {
     border: none;
     outline: none;
     background-color: none;
+
 }
 
 ::placeholder{
@@ -85,6 +86,10 @@ button {
 /*---------Product-----------*/
 
 /*---------Button-----------*/
+.btn{
+    color: #fff !important;
+}
+
 .btn_detail{
     background: #e94560;
     color: #fff;

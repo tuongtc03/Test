@@ -16,7 +16,7 @@ class PopularProduct extends Component {
       return (
         <div className="control-btn" onClick={onClick}>
           <button className="next">
-            <i class="fa fa-chevron-right"></i>
+            <i className="fa fa-chevron-right"></i>
           </button>
         </div>
       );
@@ -26,7 +26,7 @@ class PopularProduct extends Component {
       return (
         <div className="control-btn" onClick={onClick}>
           <button className="prev">
-            <i class="fa fa-chevron-left"></i>
+            <i className="fa fa-chevron-left"></i>
           </button>
         </div>
       );

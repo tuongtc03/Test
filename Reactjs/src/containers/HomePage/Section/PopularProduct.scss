@@ -20,6 +20,13 @@
             a{
                 font-size: 14px;
             }
+            &:hover {
+                background-color: #e72343;
+
+                a{
+                    color: #fff !important;
+                }
+            }
         }
     }
 

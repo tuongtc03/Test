@@ -4,7 +4,8 @@
         "product": "Product",
         "search": "Search",
         "cart": "Cart",
-        "login": "Login"
+        "login": "Login",
+        "welcome": "Welcome,"
     },
     "banner":{
         "title1": "Diverse",
@@ -39,17 +40,19 @@
         "userpass-wrong": "Invalid username or password!"
     },
     "menu": {
-        "system": {
-            "header": "System",
-            "system-administrator": {
-                "header": "System Administrator",
-                "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
-            },
-            "system-parameter": {
-                "header": "System-parameter"
-            }
+        "admin": {
+            "user": "Users",
+            "user-manage": "CRUD user",
+            "user-redux": "CRUD user với redux",
+            "manage-customer": "Manage customers",
+            "manage-admin": "Manage admins",
+            "product": "Product",
+            "manage-product": "Manage products",
+            "manage-category": "Manage categories",
+            "order": "Orders",
+            "manage-order": "Manage oders",
+            "manage-brand": "Manage brands",
+            "manage-discount": "Manage discounts"
         }
     },
     "system": {
@@ -129,5 +132,21 @@
             "remove-assign-fail": "Fail to unassign service package to customer",
             "sure-delete-assign": "Are you sure to unassign service package to customer?"
         }
+    },
+    "manage-user":{
+        "add": "Add a new user",
+        "edit": "Update a user",
+        "userName": "User Name",
+        "password": "Password",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phoneNumber": "Phone Number",
+        "address": "Address",
+        "gender": "Gender",
+        "role": "Role",
+        "image": "Avatar",
+        "create-btn": "Create new user",
+        "save-btn": "Save user"
+
     }
 }

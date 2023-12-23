@@ -6,7 +6,7 @@ import {
   getAllUsers,
   createNewUserService,
   deleteUserService,
-  editUserService,
+  updateUserService,
 } from "../../services/userService"; // Use Service gọi API
 import ModalAddUser from "./ModalAddUser"; // Use Modal
 import ModalEditUser from "./ModalEditUser";
@@ -105,7 +105,7 @@ class UserManage extends Component {
   // Xử lý sửa user được truyền từ child -> parent
   doEditUser = async (user) => {
     try {
-      let res = await editUserService(user);
+      let res = await updateUserService(user);
       if (res && res.errCode === 0) {
         this.setState({
           isOpenModelEditUser: false,

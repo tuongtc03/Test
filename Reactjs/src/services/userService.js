@@ -28,8 +28,12 @@ const deleteUserService = (id) => {
   });
 };
 
-const editUserService = (inputData) => {
-  return axios.put("/api/edit-user", inputData);
+const updateUserService = (inputData) => {
+  return axios.put("/api/update-user", inputData);
+};
+
+const getAllCodeService = (inputType) => {
+  return axios.get(`/api/allcode?type=${inputType}`);
 };
 //Nhớ export trước khi gọi API
 export {
@@ -37,5 +41,6 @@ export {
   getAllUsers,
   createNewUserService,
   deleteUserService,
-  editUserService,
+  updateUserService,
+  getAllCodeService,
 };

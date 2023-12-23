@@ -24,21 +24,23 @@ class BannerHomePage extends Component {
       return (
         <div className="control-btn" onClick={onClick}>
           <button className="next">
-            <i class="fa fa-chevron-right"></i>
+            <i className="fa fa-chevron-right"></i>
           </button>
         </div>
       );
     };
+
     const PrevArrow = (props) => {
       const { onClick } = props;
       return (
         <div className="control-btn" onClick={onClick}>
           <button className="prev">
-            <i class="fa fa-chevron-left"></i>
+            <i className="fa fa-chevron-left"></i>
           </button>
         </div>
       );
     };
+
     const settings = {
       dots: false,
       infinite: true,
@@ -49,6 +51,7 @@ class BannerHomePage extends Component {
       nextArrow: <NextArrow />,
       prevArrow: <PrevArrow />,
     };
+
     return (
       <>
         <div className="home_header_banner">
@@ -81,18 +84,6 @@ class BannerHomePage extends Component {
                   </>
                 );
               })}
-              {/* <div>
-                <img src={slide1} alt="" className="img_slider" />
-              </div>
-              <div>
-                <img src={slide2} alt="" />
-              </div>
-              <div>
-                <img src={slide3} alt="" />
-              </div>
-              <div>
-                <img src={slide4} alt="" />
-              </div> */}
             </Slider>
           </div>
           <div className="a_buy_now">

@@ -8,7 +8,7 @@ import { LANGUAGES } from "../../utils";
 import { changeLanguageApp } from "../../store/actions";
 
 class UserHeader extends Component {
-  changeLanguage = (language) => {
+  handleChangeLanguage = (language) => {
     this.props.changeLanguageAppRedux(language);
     //fire redux event : action
   };
@@ -43,7 +43,7 @@ class UserHeader extends Component {
                     : "language_vi"
                 }
               >
-                <span onClick={() => this.changeLanguage(LANGUAGES.VI)}>
+                <span onClick={() => this.handleChangeLanguage(LANGUAGES.VI)}>
                   🌐VN
                 </span>
               </div>
@@ -54,7 +54,7 @@ class UserHeader extends Component {
                     : "language_en"
                 }
               >
-                <span onClick={() => this.changeLanguage(LANGUAGES.EN)}>
+                <span onClick={() => this.handleChangeLanguage(LANGUAGES.EN)}>
                   🌐EN
                 </span>
               </div>

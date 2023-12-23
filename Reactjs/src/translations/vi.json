@@ -4,13 +4,14 @@
         "product": "Sản phẩm",
         "search": "Tìm kiếm",
         "cart": "Giỏ hàng",
-        "login": "Đăng nhập"
+        "login": "Đăng nhập",
+        "welcome": "Xin chào,"
     },
     "banner":{
         "title1": "Đa dạng",
         "title2": "mặt hàng giá tốt",
         "title3": "cho người tiêu dùng",
-        "child": "Dịch vụ giao hàng chuyên nghiệp và hệ thống kho vận trên khắp 19 Tỉnh, thành"
+        "child": "Dịch vụ giao hàng chuyên nghiệp và hệ thống kho vận trên khắp 63 Tỉnh, thành"
     },
     "common": {
         "add": "Thêm",
@@ -39,17 +40,19 @@
         "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
     },
     "menu": {
-        "system": {
-            "header": "Hệ thống",
-            "system-administrator": {
-                "header": "Quản trị hệ thống",
-                "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
-            },
-            "system-parameter": {
-                "header": "Tham số hệ thống"
-            }
+        "admin": {
+            "user": "Người dùng",
+            "user-manage": "CRUD user",
+            "user-redux": "CRUD user with redux",
+            "manage-customer": "Quản lý khách hàng",
+            "manage-admin": "Quản lý admin",
+            "product": "Sản phẩm",
+            "manage-product": "Quản lý sản phẩm",
+            "manage-category": "Quản lý loại sản phẩm",
+            "order": "Đơn hàng",
+            "manage-order": "Quản lý đơn hàng",
+            "manage-brand": "Quản lý nhãn",
+            "manage-discount": "Quản lý giảm giá"
         }
     },
     "system": {
@@ -129,5 +132,21 @@
             "remove-assign-fail": "Bỏ gán gói dịch vụ cho khách hàng thất bại",
             "sure-delete-assign": "Bạn có chắc chắn muốn bỏ gán gói dịch vụ cho khách hàng?"
         }
+    },
+    "manage-user":{
+        "add": "Thêm mới người dùng",
+        "edit": "Cập nhật người dùng",
+        "userName": "Tên Tài khoản",
+        "password": "Mật khẩu",
+        "fullName": "Họ tên",
+        "email": "Email",
+        "phoneNumber": "Số điện thoại",
+        "address": "Địa chỉ",
+        "gender": "Giới tính",
+        "role": "Vai trò",
+        "image": "Ảnh đại diện",
+        "create-btn": "Tạo mới người dùng",
+        "save-btn": "Lưu người dùng"
+
     }
 }

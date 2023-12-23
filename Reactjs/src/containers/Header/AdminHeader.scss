@@ -1,0 +1,76 @@
+@import "../../styles/common.scss";
+
+.header-container {
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
+    background-color: $colormain;
+    color: $common-text-color;
+    height: 40px;
+    position: relative;
+
+    .header-tabs-container {
+        line-height: 40px;
+        height: 40px;
+
+        .home {
+            padding: 0 15px;
+            color: #fff !important;
+        }
+    }
+    .right_content{
+        line-height: 40px;
+        height: 40px;
+        
+        .welcome{
+            margin-right: 10px;
+        }
+
+        .languages{
+            .language_vi{
+                margin: 0px 10px 0px 10px;
+                cursor: pointer;
+                opacity: 0.4;
+
+                &.active{
+                    opacity: 1;
+                    span{ 
+                        color: #fff;
+                    }
+                }
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+
+            .language_en{
+                margin: 0px 20px 0px 10px;
+                cursor: pointer;
+                opacity: 0.4;
+
+                &.active{
+                    opacity: 1;
+                    span{ 
+                        color: #fff;
+                    }
+                }
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+
+        .btn-logout {
+            color: $common-text-color;
+            line-height: 40px;
+            height: 40px;
+            padding: 0 10px;
+            &:hover {
+                background-color: darken($colormain, 5);
+            }
+            i {
+                font-size: $base-size + 1px;
+            }
+        }
+    }
+}

@@ -25,7 +25,7 @@ let handleUserLogin = (userName, password) => {
         //User đã tồn tại thì:
         let user = await db.User.findOne({
           where: { userName: userName },
-          attributes: ["userName", "roleId", "password"],
+          attributes: ["userName", "roleId", "password", "fullName"],
           raw: true, // chuyển thành object
         });
         if (user) {
@@ -124,9 +124,9 @@ let createNewUser = (data) => {
           fullName: data.fullName,
           phoneNumber: data.phoneNumber,
           address: data.address,
-          gender: data.gender === "1" ? true : false,
-          image: data.image,
+          gender: data.gender,
           roleId: data.roleId,
+          image: data.image,
         });
         if (data.image) {
           data.image = Buffer.from(data.image, "base64").toString("binary");
@@ -175,7 +175,7 @@ let deleteUser = (userId) => {
 let updateUser = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if (!data.id) {
+      if (!data.id || !data.gender || !data.roleId) {
         //Kiểm tra id có tồn tại hay ko
         resolve({
           errCode: 2,
@@ -221,22 +221,21 @@ let updateUser = (data) => {
 let getAllCodeService = (typeInput) => {
   return new Promise(async (resolve, reject) => {
     try {
-      if(!typeInput){
+      if (!typeInput) {
         resolve({
           errCode: 1,
-          errMessage: 'Missing required parameters!'
-        })
-      }else{
+          errMessage: "Missing required parameters!",
+        });
+      } else {
         let res = {};
-      let allCode = await db.Allcode.findAll({
-        where: {type: typeInput},
-        raw: true
-      });
-      res.errCode = 0;
-      res.data = allCode;
-      resolve(res);
+        let allCode = await db.Allcode.findAll({
+          where: { type: typeInput },
+          raw: true,
+        });
+        res.errCode = 0;
+        res.data = allCode;
+        resolve(res);
       }
-      
     } catch (e) {
       reject(e);
     }
