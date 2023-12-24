@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux"; // use to connect react from redux
 import { getAllCodeService } from "../../../services/userService";
-import { LANGUAGES, CRUD_ACTIONS } from "../../../utils"; //use to gán giá trị thay đổi mỗi lần thực thi action
+import { LANGUAGES, CRUD_ACTIONS, CommonUtils } from "../../../utils"; //use to gán giá trị thay đổi mỗi lần thực thi action
 import * as actions from "../../../store/actions"; // phải import dòng này để kết nối đến redux fire một action
 import "./UserRedux.scss";
 import Lightbox from "react-image-lightbox"; // use to zoom in image
@@ -57,6 +57,7 @@ class UserRedux extends Component {
       let arrGenders = this.props.genderRedux;
       let arrRoles = this.props.roleRedux;
 
+      //Khi tạo mới hoặc cập nhật xong thì set lại các giá trị
       this.setState({
         userName: "",
         password: "",
@@ -67,19 +68,21 @@ class UserRedux extends Component {
         roleId: arrRoles && arrRoles.length > 0 ? arrRoles[1].key : "",
         gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : "",
         image: "",
+        previewImgURL: "",
         action: CRUD_ACTIONS.CREATE, // cập nhật lại thành create user
       });
     }
   }
 
-  handleOnChangeImage = (event) => {
+  handleOnChangeImage = async (event) => {
     let data = event.target.files;
     let file = data[0];
     if (file) {
+      let base64 = await CommonUtils.getBase64(file);
       let objectUrl = URL.createObjectURL(file);
       this.setState({
         previewImgURL: objectUrl,
-        image: file,
+        image: base64, // image là 1 file
       });
     }
   };
@@ -113,6 +116,7 @@ class UserRedux extends Component {
     }
 
     if (action === CRUD_ACTIONS.EDIT) {
+      console.log('check image ', this.state)
       //fire redux create user
       this.props.updateUserRedux({
         id: this.state.id, //bắt buộc phải có để update
@@ -166,6 +170,12 @@ class UserRedux extends Component {
   };
 
   handleEditUserFromParent = (user) => {
+    // chuyển đổi imageBase64
+    let imageBase64 = "";
+    if (user.image) {
+      imageBase64 = new Buffer(user.image, "base64").toString("binary");
+    }
+
     //Cập nhật state = user truyền vào từ child
     this.setState({
       id: user.id,
@@ -177,7 +187,8 @@ class UserRedux extends Component {
       address: user.address,
       roleId: user.roleId,
       gender: user.gender,
-      image: user.image,
+      image: "",
+      previewImgURL: imageBase64,
       action: CRUD_ACTIONS.EDIT,
     });
   };

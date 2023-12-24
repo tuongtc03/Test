@@ -106,7 +106,6 @@ export const fetchAllUsersStart = () => {
       dispatch({
         type: actionTypes.FETCH_START_LOADING,
       });
-      //Gọi hàm từ userService để lấy AllCode với Type là ROLE
       let res = await getAllUsers("ALL");
       if (res && res.errCode === 0) {
         // Nếu true đi tiếp hàm success với biến truyền vào

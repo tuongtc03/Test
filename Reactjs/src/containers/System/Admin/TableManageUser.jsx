@@ -29,7 +29,7 @@ class TableManageUser extends Component {
   };
 
   handleEditUser = (user) => {
-    this.props.handleEditUserFromParent(user)
+    this.props.handleEditUserFromParent(user);
   };
 
   render() {
@@ -46,7 +46,7 @@ class TableManageUser extends Component {
               <th>Address</th>
               <th>Gender</th>
               <th>Role</th>
-              <th>Image</th>
+
               <th>Action</th>
             </tr>
 
@@ -62,7 +62,6 @@ class TableManageUser extends Component {
                     <td>{item.address}</td>
                     <td>{item.gender}</td>
                     <td>{item.roleId}</td>
-                    <td>{item.image}</td>
 
                     <td>
                       <button

@@ -195,6 +195,7 @@ let updateUser = (data) => {
         user.gender = data.gender;
         user.roleId = data.roleId;
 
+        // Nếu data.image được truyền vào khác "" sẽ cập nhật image
         if (data.image) {
           user.image = data.image;
         }
