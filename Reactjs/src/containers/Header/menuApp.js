@@ -5,16 +5,8 @@ export const adminMenu = [
     menus: [
       {
         name: "menu.admin.manage-customer",
-        link: "user-customer",
+        link: "manage-customer",
         // subMenus: [
-        //   {
-        //     name: "menu.system.system-administrator.user-manage",
-        //     link: "/system/user-manage",
-        //   },
-        //   {
-        //     name: "menu.system.system-administrator.user-redux",
-        //     link: "/system/user-redux",
-        //   },
         //   {
         //     name: "menu.system.system-administrator.product-manage",
         //     link: "/system/product-manage",
@@ -24,15 +16,11 @@ export const adminMenu = [
 
       {
         name: "menu.admin.manage-admin",
-        link: "user-admin",
+        link: "manage-admin",
       },
       {
         name: "menu.admin.user-manage",
-        link: "manage-user",
-      },
-      {
-        name: "menu.admin.user-redux",
-        link: "user-redux",
+        link: "manage-user-redux",
       },
     ],
   },
@@ -42,23 +30,23 @@ export const adminMenu = [
     menus: [
       {
         name: "menu.admin.manage-product",
-        link: "manage-product",
+        link: "manage-product-redux",
       },
 
       {
         //Quản lý loại sản phẩm
         name: "menu.admin.manage-category",
-        link: "manage-category",
+        link: "manage-category-redux",
       },
       {
         //Quản lý nhãn
         name: "menu.admin.manage-brand",
-        link: "manage-brand",
+        link: "manage-brand-redux",
       },
       {
         //Quản lý giảm giá
         name: "menu.admin.manage-discount",
-        link: "manage-discount",
+        link: "manage-discount-redux",
       },
     ],
   },
@@ -68,7 +56,7 @@ export const adminMenu = [
     menus: [
       {
         name: "menu.admin.manage-order",
-        link: "manage-order",
+        link: "manage-order-redux",
       },
     ],
   },

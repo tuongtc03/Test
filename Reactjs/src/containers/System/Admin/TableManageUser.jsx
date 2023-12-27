@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
-import "./TableManageUser.scss";
+import "../TableManage.scss";
 import * as actions from "../../../store/actions"; // phải import dòng này để kết nối đến redux fire một action
 
 class TableManageUser extends Component {
@@ -35,8 +35,8 @@ class TableManageUser extends Component {
   render() {
     let arrUsers = this.state.usersRedux;
     return (
-      <div className="users_container_table">
-        <table id="TableManageUser">
+      <div className="container_table">
+        <table id="Table">
           <tbody>
             <tr>
               <th>Username</th>

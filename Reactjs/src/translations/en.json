@@ -13,37 +13,10 @@
         "title3": "for consumer",
         "child": "Professional delivery service and logistics system throughout 19 provinces and cities"
     },
-    "common": {
-        "add": "Add",
-        "edit": "Edit",
-        "delete": "Delete",
-        "decentralize": "Decentralize",
-        "close": "Close",
-        "save": "Save",
-        "refresh": "Refresh",
-        "accept": "Accept",
-        "confirm": "Confirm",
-        "confirm-this-task": "Are you sure to process this task?",
-        "fail-to-load-data": "Fail to load data",
-        "unknown-error": "There was an error",
-        "internal-server-error": "Internal server error",
-        "bad-request": "Bad request",
-        "forbiden-request": "Invalid input data",
-        "fail-to-load-all-code": "Fail to load data from allcode",
-        "sum": "Sum",
-        "date-range-invalid": "Date range invalid"
-    },
-    "login": {
-        "login": "Login",
-        "username": "Username",
-        "password": "Password",
-        "userpass-wrong": "Invalid username or password!"
-    },
     "menu": {
         "admin": {
             "user": "Users",
-            "user-manage": "CRUD user",
-            "user-redux": "CRUD user với redux",
+            "user-manage": "Manage user",
             "manage-customer": "Manage customers",
             "manage-admin": "Manage admins",
             "product": "Product",
@@ -148,5 +121,48 @@
         "create-btn": "Create new user",
         "save-btn": "Save user"
 
+    },
+    "manage-category":{
+        "add": "Add a new category",
+        "edit": "Update a category",
+        "name": "Category name",
+        "image": "Image",
+        "create-btn": "Create new category",
+        "save-btn": "Save category"
+    },
+    "manage-brand":{
+        "add": "Add a new brand",
+        "edit": "Update a brand",
+        "name": "Brand name",
+        "image": "Image",
+        "create-btn": "Create new brand",
+        "save-btn": "Save brand"
+    },
+    "manage-discount":{
+        "add": "Add a new discount",
+        "edit": "Update a discount",
+        "discountPercentage": "Discount percentage",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "create-btn": "Create new discount",
+        "save-btn": "Save discount"
+    },
+    "manage-product":{
+        "add": "Add a new product",
+        "edit": "Update a product",
+        "name": "Product name",
+        "price": "Price",
+        "description": "Description",
+        "stockQuantity": "Stock quantity",
+        "cate": "Category",
+        "brand": "Brand",
+        "discount": "Discount",
+        "image": "Image",
+        "create-btn": "Create new product",
+        "save-btn": "Save product"
+    },
+    "homepage":{
+        "popular-product": "Popular product",
+        "view-more": "View more"
     }
 }

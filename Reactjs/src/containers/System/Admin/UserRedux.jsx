@@ -9,6 +9,7 @@ import Lightbox from "react-image-lightbox"; // use to zoom in image
 import "react-image-lightbox/style.css";
 import TableManageUser from "./TableManageUser";
 
+//CRUD User by Redux
 class UserRedux extends Component {
   constructor(props) {
     super(props);
@@ -43,14 +44,14 @@ class UserRedux extends Component {
       let arrGenders = this.props.genderRedux;
       this.setState({
         genderArr: arrGenders, // gán vào select option
-        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : "", // gán giá trị mặc định
+        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : "", // gán giá trị mặc định
       });
     }
     if (prevProps.roleRedux !== this.props.roleRedux) {
       let arrRoles = this.props.roleRedux;
       this.setState({
         roleArr: arrRoles,
-        roleId: arrRoles && arrRoles.length > 0 ? arrRoles[1].key : "",
+        roleId: arrRoles && arrRoles.length > 0 ? arrRoles[1].keyMap : "",
       });
     }
     if (prevProps.listUsers !== this.props.listUsers) {
@@ -65,8 +66,8 @@ class UserRedux extends Component {
         fullName: "",
         phoneNumber: "",
         address: "",
-        roleId: arrRoles && arrRoles.length > 0 ? arrRoles[1].key : "",
-        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : "",
+        roleId: arrRoles && arrRoles.length > 0 ? arrRoles[1].keyMap : "",
+        gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : "",
         image: "",
         previewImgURL: "",
         action: CRUD_ACTIONS.CREATE, // cập nhật lại thành create user
@@ -116,7 +117,6 @@ class UserRedux extends Component {
     }
 
     if (action === CRUD_ACTIONS.EDIT) {
-      console.log('check image ', this.state)
       //fire redux create user
       this.props.updateUserRedux({
         id: this.state.id, //bắt buộc phải có để update
@@ -158,15 +158,9 @@ class UserRedux extends Component {
     let copyState = { ...this.state };
 
     copyState[id] = event.target.value;
-    this.setState(
-      {
-        ...copyState,
-      }
-      // ,
-      // () => {
-      //   console.log("check input onchange ", this.state);
-      // }
-    );
+    this.setState({
+      ...copyState,
+    });
   };
 
   handleEditUserFromParent = (user) => {
@@ -194,11 +188,11 @@ class UserRedux extends Component {
   };
 
   render() {
+    console.log("check action ", this.state.action);
     let genders = this.state.genderArr;
     let roles = this.state.roleArr;
     let language = this.props.language;
     let isLoading = this.props.isLoading;
-
     let {
       userName,
       password,
@@ -322,7 +316,7 @@ class UserRedux extends Component {
                       genders.length > 0 &&
                       genders.map((item, index) => {
                         return (
-                          <option key={index} value={item.key}>
+                          <option key={index} value={item.keyMap}>
                             {language === LANGUAGES.VI
                               ? item.value_vi
                               : item.value_en}
@@ -347,7 +341,7 @@ class UserRedux extends Component {
                       roles.length > 0 &&
                       roles.map((item, index) => {
                         return (
-                          <option key={index} value={item.key}>
+                          <option key={index} value={item.keyMap}>
                             {language === LANGUAGES.VI
                               ? item.value_vi
                               : item.value_en}

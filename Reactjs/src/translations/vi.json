@@ -13,37 +13,10 @@
         "title3": "cho người tiêu dùng",
         "child": "Dịch vụ giao hàng chuyên nghiệp và hệ thống kho vận trên khắp 63 Tỉnh, thành"
     },
-    "common": {
-        "add": "Thêm",
-        "edit": "Sửa",
-        "delete": "Xóa",
-        "decentralize": "Phân quyền",
-        "close": "Đóng",
-        "save": "Lưu",
-        "refresh": "Refresh",
-        "accept": "Chấp nhận",
-        "confirm": "Xác nhận",
-        "confirm-this-task": "Bạn có chắc chắn thực hiện tác vụ này?",
-        "fail-to-load-data": "Không thể tải về dữ liệu",
-        "unknown-error": "Có lỗi xảy ra",
-        "internal-server-error": "Lỗi kết nối",
-        "bad-request": "Yêu cầu không hợp lệ",
-        "forbiden-request": "Thông tin truyền vào không hợp lệ",
-        "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
-        "sum": "Tổng",
-        "date-range-invalid": "Khoảng thời gian không hợp lệ"
-    },
-    "login": {
-        "login": "Đăng nhập",
-        "username": "Tên đăng nhập",
-        "password": "Mật khẩu",
-        "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
-    },
     "menu": {
         "admin": {
             "user": "Người dùng",
-            "user-manage": "CRUD user",
-            "user-redux": "CRUD user with redux",
+            "user-manage": "Quản lý người dùng",
             "manage-customer": "Quản lý khách hàng",
             "manage-admin": "Quản lý admin",
             "product": "Sản phẩm",
@@ -145,8 +118,52 @@
         "gender": "Giới tính",
         "role": "Vai trò",
         "image": "Ảnh đại diện",
-        "create-btn": "Tạo mới người dùng",
-        "save-btn": "Lưu người dùng"
+        "create-btn": "Tạo mới",
+        "save-btn": "Lưu"
 
+    },
+    "manage-category":{
+        "add": "Thêm mới loại sản phẩm",
+        "edit": "Cập nhật loại sản phẩm",
+        "name": "Tên loại sản phẩm",
+        "image": "Hình ảnh",
+        "create-btn": "Tạo mới",
+        "save-btn": "Lưu"
+    },
+    "manage-brand":{
+        "add": "Thêm mới nhãn hiệu",
+        "edit": "Cập nhật nhãn hiệu",
+        "name": "Tên nhãn hiệu",
+        "image": "Hình ảnh",
+        "create-btn": "Tạo mới",
+        "save-btn": "Lưu"
+    },
+    "manage-discount":{
+        "add": "Tạo mới giảm giá",
+        "edit": "Cập nhật giảm giá",
+        "discountPercentage": "Phần trăm giảm giá",
+        "startDate": "Ngày bắt đầu",
+        "endDate": "Ngày kết thúc",
+        "create-btn": "Tạo mới",
+        "save-btn": "Lưu"
+    },
+    "manage-product":{
+        "add": "Thêm mới sản phẩm",
+        "edit": "Cập nhật sản phẩm",
+        "name": "Tên sản phẩm",
+        "price": "Giá",
+        "description": "Mô tả",
+        "stockQuantity": "Số lượng tồn kho",
+        "cate": "Loại sản phẩm",
+        "brand": "Nhãn hiệu",
+        "discount": "Giảm giá",
+        "image": "Hình ảnh",
+        "create-btn": "Tạo mới",
+        "save-btn": "Lưu"
+    },
+    "homepage":{
+        "popular-product": "Sản phẩm nổi bật",
+        "view-more": "Xem thêm"
     }
+    
 }

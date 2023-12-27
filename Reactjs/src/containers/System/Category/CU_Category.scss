@@ -1,0 +1,21 @@
+.label_uploadImg{
+    padding: 5px;
+    border-radius: 0.25rem;
+    background-color: #ddd;
+    cursor: pointer;
+    height: 32px;
+
+    &:hover{
+        opacity: 0.9;
+    }
+}
+.preview_img{
+    height: 105px;
+    width: 105px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    margin-left: 20px;
+    background: center center no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}

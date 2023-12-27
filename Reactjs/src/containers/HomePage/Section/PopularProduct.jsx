@@ -5,57 +5,47 @@ import "./PopularProduct.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import slide4 from "../../../assets/images/slider/slide4.jpg";
 import SliderProduct from "./SliderProduct";
+import * as actions from "../../../store/actions";
+import { FormattedMessage } from "react-intl";
 
 class PopularProduct extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      arrProducts: [],
+    };
+  }
+  componentDidMount() {
+    this.props.loadTopProducts();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.topProducts !== this.props.topProducts) {
+      this.setState({
+        arrProducts: this.props.topProducts,
+      });
+    }
+  }
   render() {
-    const NextArrow = (props) => {
-      const { onClick } = props;
-      return (
-        <div className="control-btn" onClick={onClick}>
-          <button className="next">
-            <i className="fa fa-chevron-right"></i>
-          </button>
-        </div>
-      );
-    };
-    const PrevArrow = (props) => {
-      const { onClick } = props;
-      return (
-        <div className="control-btn" onClick={onClick}>
-          <button className="prev">
-            <i className="fa fa-chevron-left"></i>
-          </button>
-        </div>
-      );
-    };
-    const settings = {
-      dots: false,
-      infinite: true,
-      slidesToShow: 5,
-      slidesToScroll: 1,
-      autoplay: true,
-      margin: 2000,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-    };
+    let arrProducts = this.state.arrProducts;
     return (
       <>
         <section className="section_popular_product background">
           <div className="container">
             <div className="content_popular_product  d_flex">
               <div className="title_popular_product">
-                <h2>Sản phẩm nổi bật</h2>
+                <h2>
+                  <FormattedMessage id="homepage.popular-product" />
+                </h2>
               </div>
               <div className="view_more">
-                <Link to="">Xem thêm</Link>
+                <Link to=""> <FormattedMessage id="homepage.view-more" /></Link>
               </div>
             </div>
             <div className="product_sliders">
-              <Slider {...settings}>
-                {SliderProduct.map((val, index) => {
+              <Slider {...this.props.settings}>
+                {/* {SliderProduct.map((val, index) => {
                   return (
                     <>
                       <div key={index} className="product product_item">
@@ -76,7 +66,48 @@ class PopularProduct extends Component {
                       </div>
                     </>
                   );
-                })}
+                })} */}
+                {arrProducts &&
+                  arrProducts.length > 0 &&
+                  arrProducts.map((item, index) => {
+                    let imageBase64 = "";
+                    if (item.image) {
+                      imageBase64 = Buffer.from(item.image, "base64").toString(
+                        "binary"
+                      );
+                    }
+                    return (
+                      <>
+                        <div key={index} className="product product_item">
+                          <div
+                            className="imageBase"
+                            style={{
+                              backgroundImage: `url(${imageBase64})`,
+                            }}
+                          ></div>
+
+                          {/* <p className="desc">
+                            {item.discountData.discountPercentage}
+                          </p> */}
+                          <div>
+                            <h4>{item.name}</h4>
+                          </div>
+                          <div className="d_flex">
+                            <p className="desc">{item.description}</p>
+                            <p className="price">{item.price.toString()} VNĐ</p>
+                          </div>
+                          <div className="d_flex">
+                            <Link to="">
+                              <button className="btn_detail">
+                                Xem chi tiết
+                              </button>
+                            </Link>
+                            <button className="btn_buy">Mua ngay</button>
+                          </div>
+                        </div>
+                      </>
+                    );
+                  })}
               </Slider>
             </div>
           </div>
@@ -89,11 +120,16 @@ class PopularProduct extends Component {
 const mapStateToProps = (state) => {
   return {
     isLoggedIn: state.user.isLoggedIn,
+    topProducts: state.product.topProducts,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    loadTopProducts: () => dispatch(actions.fetchTopProducts()),
+
+    // createBrand: (data) => dispatch(actions.createBrand(data)),
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PopularProduct);

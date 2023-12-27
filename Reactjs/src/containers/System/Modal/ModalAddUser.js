@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
 import { connect } from "react-redux";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap"; // Use Modal
-import { emitter } from "../../utils/emitter"; // Use emitter
+import { emitter } from "../../../utils/emitter"; // Use emitter
 class ModalAddUser extends Component {
   constructor(props) {
     super(props);

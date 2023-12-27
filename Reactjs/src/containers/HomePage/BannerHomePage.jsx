@@ -5,11 +5,6 @@ import "./HomePage.scss";
 import { FormattedMessage } from "react-intl"; //translate lang
 import image from "../../assets/images/subheader.svg";
 
-import slide1 from "../../assets/images/slider/slide1.jpg";
-import slide2 from "../../assets/images/slider/slide2.jpg";
-import slide3 from "../../assets/images/slider/slide3.jpg";
-import slide4 from "../../assets/images/slider/slide4.jpg";
-
 import SliderBanner from "./SliderBanner";
 
 import Slider from "react-slick";

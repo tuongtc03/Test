@@ -7,10 +7,10 @@ import {
   createNewUserService,
   deleteUserService,
   updateUserService,
-} from "../../services/userService"; // Use Service gọi API
+} from "../../../services/userService"; // Use Service gọi API
 import ModalAddUser from "./ModalAddUser"; // Use Modal
 import ModalEditUser from "./ModalEditUser";
-import { emitter } from "../../utils/emitter"; // Use emitter
+import { emitter } from "../../../utils/emitter"; // Use emitter
 // Life cycle
 // Run component:
 // 1. Run constructor -> init state

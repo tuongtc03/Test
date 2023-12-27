@@ -128,12 +128,55 @@ let createNewUser = (data) => {
           roleId: data.roleId,
           image: data.image,
         });
-        if (data.image) {
-          data.image = Buffer.from(data.image, "base64").toString("binary");
-        }
         resolve({
           errCode: 0,
           message: "OK",
+        });
+      }
+    } catch (e) {
+      reject(e);
+    }
+  });
+};
+
+// Cập nhật user
+let updateUser = (data) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+      if (!data.id || !data.gender || !data.roleId) {
+        //Kiểm tra id có tồn tại hay ko
+        resolve({
+          errCode: 2,
+          errMessage: "Missing required parameters!",
+        });
+      } // Tìm user trong db
+      let user = await db.User.findOne({
+        where: { id: data.id },
+        raw: false, // Chuyển sang object ở db
+      });
+      if (user) {
+        user.fullName = data.fullName;
+        user.email = data.email;
+        user.phoneNumber = data.phoneNumber;
+        user.address = data.address;
+        user.gender = data.gender;
+        user.roleId = data.roleId;
+
+        if (data.image) {
+          // Nếu data.image được truyền vào khác "" sẽ cập nhật image
+          user.image = data.image;
+        }
+
+        await user.save(); // Lưu lại
+
+        resolve({
+          errCode: 0,
+          message: "Update the user succeeds!",
+        });
+      } else {
+        resolve({
+          errCode: 1,
+          errMessage: `User's not found!`,
         });
       }
     } catch (e) {
@@ -171,54 +214,6 @@ let deleteUser = (userId) => {
   });
 };
 
-// Cập nhật user
-let updateUser = (data) => {
-  return new Promise(async (resolve, reject) => {
-    try {
-      if (!data.id || !data.gender || !data.roleId) {
-        //Kiểm tra id có tồn tại hay ko
-        resolve({
-          errCode: 2,
-          errMessage: "Missing required parameters!",
-        });
-      } // Tìm user trong db
-      let user = await db.User.findOne({
-        where: { id: data.id },
-        raw: false, // Chuyển sang object ở db
-      });
-      if (user) {
-        // Tiến hành thay thế
-        user.fullName = data.fullName;
-        user.email = data.email;
-        user.phoneNumber = data.phoneNumber;
-        user.address = data.address;
-        user.gender = data.gender;
-        user.roleId = data.roleId;
-
-        // Nếu data.image được truyền vào khác "" sẽ cập nhật image
-        if (data.image) {
-          user.image = data.image;
-        }
-
-        await user.save(); // Lưu lại
-
-        resolve({
-          errCode: 0,
-          message: "Update the user succeeds!",
-        });
-      } else {
-        resolve({
-          errCode: 1,
-          errMessage: `User's not found!`,
-        });
-      }
-    } catch (e) {
-      reject(e);
-    }
-  });
-};
-
-//
 let getAllCodeService = (typeInput) => {
   return new Promise(async (resolve, reject) => {
     try {
@@ -247,7 +242,7 @@ module.exports = {
   handleUserLogin: handleUserLogin,
   getAllUsers: getAllUsers,
   createNewUser: createNewUser,
-  deleteUser: deleteUser,
   updateUser: updateUser,
+  deleteUser: deleteUser,
   getAllCodeService: getAllCodeService,
 };
