@@ -1,0 +1,157 @@
+.container_checkout{
+    width: 80%;
+    margin: auto;
+    min-height: 100vh;
+
+    .title{
+        color: #e72343;
+        padding: 30px 0px 10px ;
+        text-align: center;
+    }
+    .content_left{
+        width: 70%;
+
+    .checkout_info{
+        background: #fff;
+        padding: 20px;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+        margin: 10px;
+        
+        
+
+        h4{
+            margin-bottom: 0px !important;
+        }
+        .css-1u3bzj6-MuiFormControl-root-MuiTextField-root{
+            width: 100%;
+        }
+        .two_input{
+            display: flex;
+            margin: 10px;
+
+            .name {
+                width: 50%;
+            }
+
+            .phoneNumber
+            {
+                width: 50%;
+                margin-left: 10px;
+            }
+            .city{
+                width: 50%;
+                margin-right: 10px;
+                .css-b62m3t-container{
+                    z-index: 3;
+                }
+            }
+
+            .district{
+                width: 50%;
+                .css-b62m3t-container{
+                    z-index: 3;
+                }
+            }
+        }
+
+        .ward{
+            margin: 10px;
+            .css-b62m3t-container{
+                z-index: 2;
+            }
+        }
+
+        .home_address{
+            margin: 10px;
+        }
+
+        .note{
+            margin: 10px;
+        }
+
+        .paymentMethod{
+            margin: 10px;
+
+            h5{
+                margin: 10px;
+            }
+
+            .item_radioBtn{
+                margin: 10px;
+            }
+        }
+            
+        .finish_buy{
+            display: flex;
+
+            button{
+                color: #fff;
+                background: #ea1234;
+        padding: 10px;
+        margin: 10px;
+        width: 100%;
+        text-align: center;
+        font-weight: 600;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: transform 0.2s ease-in-out;
+          cursor: pointer;
+          text-transform: uppercase;
+          &:hover {
+            transform: scale(1.01);
+        }
+            }
+        }
+        
+    }
+}
+.content_right{
+    width: 30%;
+    height: 100%;
+    background: #fff;
+    padding: 12px;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 1px;
+    margin: 10px;
+     
+    h3{
+        text-align: center;
+        padding: 10px 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .beforePrice{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+        padding: 10px 10px;
+    }
+
+    .ship{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+    }
+
+    .totalPrice{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 10px;
+
+        .labelPrice{
+            font-size: 1.5rem;
+        }
+
+        .price{
+            color: #ea1234;
+        font-weight: 600;
+        font-size: 1.5rem;
+        }
+    }
+}
+}

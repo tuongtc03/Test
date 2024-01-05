@@ -1,0 +1,105 @@
+{
+    "userheader":{
+        "support": "Support",
+        "product": "Product",
+        "search": "Search",
+        "cart": "Cart",
+        "login": "Login",
+        "welcome": "Welcome,"
+    },
+    "banner":{
+        "title1": "Diverse",
+        "title2": "products at good price",
+        "title3": "for consumer",
+        "child": "Professional delivery service and logistics system throughout 19 provinces and cities"
+    },
+    "menu": {
+        "admin": {
+            "user": "Users",
+            "user-manage": "Manage user",
+            "manage-customer": "Manage customers",
+            "manage-admin": "Manage admins",
+            "product": "Product",
+            "manage-product": "Manage products",
+            "manage-category": "Manage categories",
+            "order": "Orders",
+            "manage-order": "Manage oders",
+            "manage-brand": "Manage brands",
+            "manage-discount": "Manage discounts"
+        },
+        "user": {
+            "manage-profile": "Manage profile",
+            "manage-order": "Manage order"
+        }
+    },
+    "manage-user":{
+        "add": "Add a new user",
+        "edit": "Update a user",
+        "id": "Id",
+        "userName": "User Name",
+        "password": "Password",
+        "fullName": "Full Name",
+        "email": "Email",
+        "phoneNumber": "Phone Number",
+        "address": "Address",
+        "gender": "Gender",
+        "role": "Role",
+        "image": "Avatar",
+        "action": "Action",
+        "create-btn": "Create new user",
+        "save-btn": "Save user"
+
+    },
+    "manage-category":{
+        "add": "Add a new category",
+        "edit": "Update a category",
+        "id": "Id",
+        "name": "Category name",
+        "image": "Image",
+        "action": "Action",
+        "create-btn": "Create new category",
+        "save-btn": "Save category"
+    },
+    "manage-brand":{
+        "add": "Add a new brand",
+        "edit": "Update a brand",
+        "id": "Id",
+        "name": "Brand name",
+        "cate": "Category",
+        "image": "Image",
+        "action": "Action",
+        "create-btn": "Create new brand",
+        "save-btn": "Save brand"
+    },
+    "manage-discount":{
+        "add": "Add a new discount",
+        "edit": "Update a discount",
+        "id": "Id",
+        "discountPercentage": "Discount percentage",
+        "startDate": "Start date",
+        "endDate": "End date",
+        "action": "Action",
+        "create-btn": "Create new discount",
+        "save-btn": "Save discount"
+    },
+    "manage-product":{
+        "add": "Add a new product",
+        "edit": "Update a product",
+        "id": "Id",
+        "name": "Product name",
+        "price": "Price",
+        "description": "Description",
+        "stockQuantity": "Stock quantity",
+        "cate": "Category",
+        "brand": "Brand",
+        "discount": "Discount",
+        "image": "Image",
+        "action": "Action",
+        "create-btn": "Create new product",
+        "save-btn": "Save product"
+    },
+    "homepage":{
+        "popular-product": "Popular product",
+        "view-more": "View more"
+    }
+}
